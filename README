@@ -14,6 +14,8 @@ project/
 │   ├── js/                         (JavaScript файлы)
 │   │   ├── buttontotop.js          (JavaScript файл c функцией для кнопки вверх)
 │   │   ├── index.js                (JavaScript файл)
+│   │   ├── Header.js               (JavaScript файл)
+│   │   ├── Menu.js                 (JavaScript файл)
 │   │   └── ...                     (другие JavaScript файлы)
 │   ├── images/                     (изображения)
 │   │   ├── drill.jpg               (пример изображения)
