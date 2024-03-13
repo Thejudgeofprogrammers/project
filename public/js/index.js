@@ -1,2 +1,2 @@
-import Header from './public/js/Header.js';
+import Navbar from './public/js/Navbar.js';
 import Menu from './public/js/Menu.js';
