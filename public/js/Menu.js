@@ -35,26 +35,21 @@ class Menu {
 const menuElement = document.querySelector(".vision");
 const menu = new Menu(menuElement);
 
+const data = [['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],]
 
-
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#",'../img/drill.jpeg', 4000);
-menu.addMenuItem('Дрель', "#" ,'../img/drill.jpeg', 4000);
+data.forEach(item => menu.addMenuItem(...item));

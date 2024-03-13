@@ -1,2 +1,3 @@
-import Navbar from './public/js/Navbar.js';
-import Menu from './public/js/Menu.js';
+import Navbar from './Navbar';
+import Menu from './Menu';
+import Catalog from './Catalog'

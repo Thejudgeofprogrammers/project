@@ -23,10 +23,12 @@ class Navbar {
 const NavbarElement = document.querySelector(".nav-bar ul");
 const bar = new Navbar(NavbarElement);
 
-bar.addNavbarItem('Инструменты', "#");
-bar.addNavbarItem('Электрика', "#");
-bar.addNavbarItem('Акции', "#");
-bar.addNavbarItem('Сантехника', "#");
-bar.addNavbarItem('Стройматериалы', "#");
-bar.addNavbarItem('Офис', "#");
-bar.addNavbarItem('Форум', "#");
+const data = [['Инструменты', "#"], 
+              ['Электрика', "#"],
+              ['Акции', "#"], 
+              ['Сантехника', "#"],
+              ['Стройматериалы', "#"], 
+              ['Офис', "#"],
+              ['Форум', "#"]];
+
+data.forEach(item => bar.addNavbarItem(...item));
