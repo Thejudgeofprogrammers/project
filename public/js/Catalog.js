@@ -20,7 +20,7 @@ class Catalog {
 };
 
 
-const CatalogElement1 = document.getElementById("#catalogID1");
+const CatalogElement1 = document.getElementById("catalogID1");
 const catalog1 = new Catalog(CatalogElement1);
 
 const dataInCatalog1 =[['Электрика и свет', "#"], 
@@ -36,7 +36,7 @@ const dataInCatalog1 =[['Электрика и свет', "#"],
 dataInCatalog1.forEach(item => catalog1.addCatalogItem(...item));
 
 
-const CatalogElement2 = document.getElementById("#catalogID2");
+const CatalogElement2 = document.getElementById("catalogID2");
 const catalog2 = new Catalog(CatalogElement2);
 
 const dataInCatalog2 = [['RYOBI', "#"], 
