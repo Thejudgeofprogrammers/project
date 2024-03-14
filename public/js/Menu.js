@@ -50,6 +50,22 @@ const data = [['Дрель', "#",'../img/drill.jpeg', 4000],
               ['Дрель', "#",'../img/drill.jpeg', 4000],
               ['Дрель', "#",'../img/drill.jpeg', 4000],
               ['Дрель', "#",'../img/drill.jpeg', 4000],
-              ['Дрель', "#",'../img/drill.jpeg', 4000],]
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000],
+              ['Дрель', "#",'../img/drill.jpeg', 4000]]
 
 data.forEach(item => menu.addMenuItem(...item));
