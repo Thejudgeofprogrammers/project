@@ -11,12 +11,12 @@ const contentReg =
   <p>Username</p>
   <input type="text" id="userName">
   <p>Пароль</p>
-  <input type="text" id="password">
+  <input type="password" id="password">
   <p>Почта</p>
   <input type="text" id="mail">
   <p>Согласие на обработку данных</p>
   <input type="checkbox" id="radio"><br>
-  <button id="pushButton"><a href="/">Зарегистрироватся</a></button>
+  <button id="pushButton"><a id="fl">Зарегистрироватся</a></button>
 `
 const contentLoad = 
 `
@@ -26,6 +26,7 @@ const contentLoad =
   <input type="text"><br>
   <button>Войти</button>
 `
+
 
 module.exports = {
   contentLoad,

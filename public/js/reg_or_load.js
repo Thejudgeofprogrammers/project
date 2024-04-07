@@ -1,5 +1,6 @@
 let users = {};
 let pushButton = document.querySelector('#pushButton');
+const hf = document.querySelector('#fl');
 
 if (window.location.href.includes('load')) {
   let userName = document.querySelector('#userName');
@@ -39,51 +40,99 @@ if (window.location.href.includes('registry')) {
   };
 
   pushButton.addEventListener('click', () => {
-    const name1 = validateName(name.value) ? name.value : null;
-    const lastName1 = validateName(lastName.value) ? lastName.value : null;
-    const fatherName1 = validateName(fatherName.value) ? fatherName.value : false;
+    const name1 = validateName(name.value);
+    const lastName1 = validateName(lastName.value);
+    const fatherName1 = validateFather(fatherName.value);
     const old1 = old.value.trim() ? old.value : null;
-    const userName1 = validateUserName(userName.value) ? userName.value : null;
-    const password1 = validatePassword(password.value) ? password.value : null;
-    const mail1 = validateMail(mail.value) ? mail.value : null;
+    const userName1 = validateUserName(userName.value);
+    const password1 = validatePassword(password.value);
+    const mail1 = validateMail(mail.value);
     const radio1 = radio.checked ? radio.value : null;
     const user = new makeReg(name1, lastName1, fatherName1, old1, userName1, password1, mail1, radio1);
-    const userId = 'User' + createId(users);
-    users[userId] = user;
-    getDataToServer(user, userId);
+    validateData(user);
   });
 };
+function validateData(user) {
+  const {name, lastName, fatherName, old, userName, password, mail, radio} = user;
+  if (name !== null && lastName !== null && fatherName !== null && old !== null && userName !== null && password !== null && mail !== null && radio !== null) {
+    getDataToServer(user);
+  } else {
+    console.log('Вы не заполнили все данные')
+  }
+};
 
-function createId(users) {
-  return Object.keys(users).length;
+function validateOld(old) {
+  if (old < 12 || old > 120 || old.includes(' ')) {
+    console.log('Некорректный возраст');
+    return null;
+  }
+  if (!old.includes('1234567890')) {
+    console.log('Возраст должен состоять только из цифр');
+    return null;
+  }
+  return old;
 }
 
 function validateName(name) {
-  name = name.trim().toLowerCase();
-  if (name.length <= 2) return null;
-  return name.charAt(0).toUpperCase() + name.slice(1);
+  name = name.trim();
+  if (name.length <= 2 || name.includes('1234567890') || name.includes(' ')) {
+    console.log('Неверно указанно ФИО или там содержатся цифры');  
+    return null;
+  } else {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  };
+}
+
+function validateFather(fatherName) {
+  fatherName = fatherName.trim();
+  if (fatherName.length === 0) return false;
+  if (fatherName.length <= 2 || fatherName.includes('1234567890') || fatherName.includes(' ')) {
+    console.log('Неверно указанно Отчество или там есть цифры');  
+    return null;
+  } else {
+    return fatherName.charAt(0).toUpperCase() + fatherName.slice(1).toLowerCase();
+  };
 }
 
 function validateUserName(userName) {
   userName = userName.trim();
-  if (userName.length <= 4) return null;
+  const regex = /^[a-zA-Z0-9_-]+$/;
+
+  if (userName.length <= 4) {
+    console.log('Логин слишком короткий');
+    return null
+  };
+  if (!regex.test(userName)) {
+    console.log('Логин должен состоять из английских символов');
+    return null;
+  };
+  if (userName.includes(' ')) {
+    console.log('В вашем логине есть пробелы');
+    return null;
+  };
   return userName;
 }
 
 function validatePassword(password) {
   password = password.trim();
-  if (password.length <= 6) return null;
-  return password;
+  if (password.length <= 6 || password.includes(' ')) {
+    console.log('Пароль слишком короткий');
+    return null;
+  };
+    return password;
 }
 
 function validateMail(mail) {
   mail = mail.trim();
-  if (mail.length <= 6) return null;
+  if (mail.length <= 4 || !mail.includes('@') || !mail.includes('.') || mail.includes(' ')) {
+    console.log('Неверно указанна почта');
+    return null;
+  }
   return mail;
 }
 
-function getDataToServer(user, userId) {
-  // Извлекаем данные из объекта users
+function getDataToServer(user) {
+  console.log(user)
   const userData = {
     name: user.name,
     lastName: user.lastName,
@@ -92,9 +141,8 @@ function getDataToServer(user, userId) {
     userName: user.userName,
     password: user.password,
     mail: user.mail,
-    radio: user.radio
   };
-  // Отправляем данные на сервер
+
   fetch('/registry/submit', {
     method: 'POST',
     headers: {
@@ -104,12 +152,22 @@ function getDataToServer(user, userId) {
   })
   .then(response => {
     if (response.ok) {
-      return response.text();
+      return response.json();
     }
     throw new Error('Ошибка при отправке данных');
   })
   .then(data => {
-    console.log('Данные успешно отправлены на сервер', data);
+    console.log(data);
+    if (data.error) {
+      if (data.error === 'mail') {
+        alert('Данный email уже используется');
+      };
+      if (data.error === 'userName') {
+        alert('Данный логин уже зарегистрирован');
+      };
+    } else {
+      window.location.href = '/';
+    }
   })
   .catch(error => {
     console.error('Ошибка:', error);
