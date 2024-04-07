@@ -7,7 +7,6 @@ class Navbar {
   addNavbarItem(text, linkUrl) {
     const NavbarItem = document.createElement('li');
     
-    
     const Navlink = document.createElement('a');
     Navlink.className = 'btn';
     Navlink.href = linkUrl;

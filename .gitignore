@@ -2,3 +2,9 @@ node_modules
 dist
 .parcel-cache
 cache
+[alias]
+  s = status --short
+  st = status
+  l = log --oneline --graph --decorate --all
+  br = branch
+  co = checkout

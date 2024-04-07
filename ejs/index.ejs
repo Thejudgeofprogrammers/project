@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/css/style.css">
-  <link rel="stylesheet" href="/public/css/style2.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet">
-  <title>LOLICH</title>
+  <title><%= title %></title>
 </head>
 <body>
   <div class="container" id="0">
     <aside class="sidebar">
-      <div class="logo"><img src="../public/img/logo.png" alt=""><a href="/">Ambrella</a></div>
+      <div class="logo"><img src="/img/logo.png" alt=""><a href="/">Ambrella</a></div>
       <div class="catalog" id="second0">
-        <h5><img src="./img/list-ul-regular-24.png" alt="icon">Каталог</h5>
+        <h5><img src="/img/list-ul-regular-24.png" alt="icon">Каталог</h5>
         <ul id="catalogID1"></ul>
       </div>
       <div class="catalog" id="second">
-        <h5><img src="./img/flame-solid-24.png" alt="icon">Популярные бренды</h5>
+        <h5><img src="/img/flame-solid-24.png" alt="icon">Популярные бренды</h5>
         <ul id="catalogID2"></ul>
       </div>
       <div class="menu">
         <div class="top">
-          <img src="./img/tools.jpeg" alt="tool">
+          <img src="/img/tools.jpeg" alt="tool">
           <h4>Василий<br>Петров</h4>
         </div>
         <div class="bottom">
@@ -39,20 +38,19 @@
       <header class="header_class">
         <div class="nav-bar"><ul></ul></div>
         <div class="search">
-          <img src="./img/search-regular-24.png" alt="icon">
+          <img src="/img/search-regular-24.png" alt="icon">
           <input type="text" placeholder="Всё для дома и ремонта!">
         </div>
-        <div class="registry">
-          <a href="#">Вход</a>
-          <p></p>
-          <a href="#">Регистрация</a>
-        </div>
+        <div class="registry"></div>
       </header>
       <div class="vision"></div>
     </main>
-    <a class="back-to-top"><img src="/public/img/pngwing.com (8).png" alt=""></a>
-    <script src="/public/js/index.js" type="module"></script>
-    <script src="/public/js/buttontotop.js" type="module"></script>
+    <a class="back-to-top"><img src="/img/pngwing.com (8).png" alt=""></a>
+    <script src="/js/Navbar.js" type="module"></script>
+    <script src="/js/Menu.js" type="module"></script>
+    <script src="/js/Catalog.js" type="module"></script>
+    <script src="/js/forRegistry.js" type="module"></script>
+    <script src="/js/buttontotop.js" type="module"></script>
   </div>
 </body>
 </html>

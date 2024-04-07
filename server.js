@@ -1,21 +1,19 @@
-const express = require('express');
-const mysql = require('mysql');
+#!/usr/bin/env node
+require('dotenv').config();
+const express = require('express')
+const path = require('path')
+const routes = require('./src/server/routes/api.js');
+// const middleware = require('./middleware.js')
 
-const app = exrpess();
-const port = 3000;
+const app = express()
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'mydatabase'
-});
+const PORT = process.env.PORT ?? 3030;
 
-connection.connect();
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  connection.query('SELECT * FROM mytable', (error, results, fields) => {
-    if (error) throw error;
-    res.send(results);
-  });
-});
+app.set('view engine', 'ejs');
+app.set('views', path.resolve(__dirname, 'ejs'));
+
+app.use('/', routes);
+
+app.listen(PORT, () => console.log(`Server has been started http://localhost:${PORT}`))
