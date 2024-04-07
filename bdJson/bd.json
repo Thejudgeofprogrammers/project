@@ -1,0 +1,38 @@
+[
+  {
+    "name": {},
+    "lastName": "Артём",
+    "fatherName": "Андреевич",
+    "old": "18",
+    "userName": {},
+    "password": null,
+    "mail": null,
+    "radio": "on",
+    "Date": "2024-04-07T19:20:51.788Z",
+    "usrId": 1
+  },
+  {
+    "name": {},
+    "lastName": "135135135",
+    "fatherName": "135135135",
+    "old": "135135135",
+    "userName": {},
+    "password": {},
+    "mail": "1351353151",
+    "radio": "on",
+    "Date": "2024-04-07T19:24:39.962Z",
+    "usrId": 2
+  },
+  {
+    "name": "112312312",
+    "lastName": "123123131",
+    "fatherName": "123123123",
+    "old": "123121223",
+    "userName": "123123123",
+    "password": "12312313",
+    "mail": "123123123",
+    "radio": "on",
+    "Date": "2024-04-07T19:26:46.713Z",
+    "usrId": 3
+  }
+]
